@@ -1,0 +1,9 @@
+<!ENTITY prefwindow.appname "Siger">
+<!ENTITY prefwindow.title "Siger Opcje">
+<!ENTITY pane1.title "Siger ustawienia">
+<!ENTITY prefix.label "Signature Prefix:">
+<!ENTITY prefix.accesskey "P">
+<!ENTITY suffix.label "Signature Suffix:">
+<!ENTITY suffix.accesskey "S">
+<!ENTITY check1.label "Zaznacz:">
+<!ENTITY check1.accesskey "Z">

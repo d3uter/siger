@@ -1,0 +1,6 @@
+content     siger    chrome/content/
+
+overlay chrome://messenger/content/messenger.xul chrome://siger/content/myhelloworld.xul
+
+locale	siger	en-US	chrome/locale/en-US/
+locale	siger	pl  	chrome/locale/pl/

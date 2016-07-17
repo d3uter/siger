@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE prefwindow SYSTEM "chrome://siger/locale/prefwindow.dtd">
+
+<prefwindow id="sigerPreferences"
+            title="&prefwindow.title;"
+            buttons="accept, cancel"
+            xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+            style="width: 40em; min-height: 45em;">
+
+    <prefpane id="pane1" label="&pane1.title;">
+
+        <preferences>
+            <preference id="prefix" name="extensions.siger.prefix" type="string"/>
+            <preference id="suffix" name="extensions.siger.suffix" type="string"/>
+            <preference id="check1" name="extensions.siger.check1" type="bool"/>
+            <preference id="sigpath" name="extensions.siger.sigpath" type="file"/>
+            <preference id="account" name="extensions.siger.accounts" type="string"/>
+        </preferences>
+
+        <iframe src="chrome://siger/locale/about.html" flex="2" id="infoTable" name="info_frame" style="width: 40em; height: 26em;"/>
+
+        <!--<groupbox>-->
+        <!--<caption label="Sygnatura"/>-->
+            <!--<description>-->
+                <!--Wpisz znaki końca i początku sygnatury.-->
+            <!--</description>-->
+        <!--<label accesskey="&prefix.accesskey;" control="textprefix">&prefix.label;</label><textbox id="textprefix" preference="prefix"/>-->
+        <!--<label accesskey="&suffix.accesskey;" control="textsuffix">&suffix.label;</label><textbox id="textsuffix" preference="suffix"/>-->
+        <!--</groupbox>-->
+
+
+
+        <!--<groupbox >-->
+            <!--<caption label="Konta"/>-->
+            <!--<button label="Dodaj" oncommand="addButton();"/>-->
+        <!--</groupbox>-->
+
+
+
+        <hr/>
+
+        <groupbox >
+            <caption label="Wybierz konto konto"/>
+            <menulist id="acoMenuList"
+                      class = "account-menulist"
+                      label = "ddfsdsfsd label"
+                      flex = "1"
+                      selectedIndex="0"
+                      oncommand = "selectAccount(this.value);">
+                <menupopup>
+                    <!--<menuitem label="Bears" value="b"/>-->
+                </menupopup>
+            </menulist>
+            <div id="accountPrefBox"></div>
+            <description> Zaznacz jeżeli do wiadomości tego adresu ma być doklejana zawartośc pliku. </description>
+            <deck selectedIndex="2">
+                <description value="This is the first page"/>
+                <button label="This is the second page"/>
+                <box>
+                    <description value="This is the third page"/>
+                    <button label="This is also the third page"/>
+                </box>
+            </deck>
+            <description> Zaznacz jeżeli do wiadomości tego adresu ma być doklejana zawartośc pliku. </description>
+
+            <label control="sig-path" value="Plik:"/><filefield id="sig-path" flex="1" preference="sigpath"/>
+            <button label="Browse..." oncommand="browseApp('sig-path');"/>
+
+            <!--<tabbox id="acountTabbox"-->
+                    <!--selectedIndex="0">-->
+                <!--&lt;!&ndash;<tabs>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tab label="A First tab"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tab label="Second tab"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tab label="Another tab"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;<tab label="Last tab"/>&ndash;&gt;-->
+                <!--&lt;!&ndash;</tabs>&ndash;&gt;-->
+                <!--<tabpanels>-->
+                    <!--&lt;!&ndash;<tabpanel>&lt;!&ndash; tabpanel First elements go here &ndash;&gt;</tabpanel>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<tabpanel>&lt;!&ndash; tabpanel Second elements go here &ndash;&gt;</tabpanel>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<tabpanel><button label="Click me"/></tabpanel>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<tabpanel>&lt;!&ndash; tabpanel Fourth elements go here &ndash;&gt;</tabpanel>&ndash;&gt;-->
+                <!--</tabpanels>-->
+            <!--</tabbox>-->
+
+        </groupbox>
+
+        <!--<listbox>-->
+            <!--<listitem label="Chocolate"/>-->
+            <!--<listitem label="Jelly Beans"/>-->
+        <!--</listbox>-->
+
+        <!--<groupbox>-->
+            <!--<caption label="Konto(a)"/>-->
+            <!--<description>-->
+                <!--Zaznacz kont które mają korzystać z sigera.-->
+            <!--</description>-->
+            <!--<checkbox id="checkboxcheck1" accesskey="&check1.accesskey;" label="&check1.label;" checked="false" preference="check1"/>-->
+        <!--</groupbox>-->
+
+        <!--<groupbox>-->
+            <!--<caption label="Plik"/>-->
+            <!--<description>-->
+                <!--Wybierz plik który ma byc dołączany do wiadomości.-->
+            <!--</description>-->
+        <!--<vbox>-->
+            <!--<hbox>-->
+                <!--<label control="sig-path" value="Plik:"/><filefield id="sig-path" flex="1" preference="sigpath"/>-->
+                <!--<button label="Browse..." oncommand="browseApp('sig-path');"/>-->
+            <!--</hbox>-->
+        <!--</vbox>-->
+        <!--</groupbox>-->
+
+    </prefpane>
+
+    <script type="application/x-javascript" src="chrome://siger/content/settings.js" />
+
+</prefwindow>
